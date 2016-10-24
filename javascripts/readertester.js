@@ -40,3 +40,17 @@ function colorChange(elementTriggered) {
 		break;
 	}
 }
+
+//Ugly timer functions
+//TODO: clean this up to use one button
+var timer;
+var finishedTime;
+
+function startTimer() {
+	timer = Date.now();
+}
+
+function stopTimer() {
+	finishedTime = new Date(Date.now() - timer);
+	document.querySelector("#timerText").innerHTML = finishedTime.getSeconds() + " seconds";
+}

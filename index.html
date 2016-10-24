@@ -25,6 +25,10 @@
 				<option value="whiteBlack">White on Black</option>
 			</select>
 			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this)">
+
+			<button onclick="startTimer()">Start Timer</button>
+			<button onclick="stopTimer()">Stop Timer</button>
+			<span id="timerText"></span>
 		</div>
 
 		<div id="textToRead">
