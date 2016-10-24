@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/readertester.css">
+	</head>
+
+	<body>
+		<div id="teacherControls">
+			<select id="font-family-dropdown" onchange="fontFamilyChange(this)">
+				<option value="sans-serif">Sans-serif</option>
+				<option value="serif">Serif</option>
+				<option value="Helvetica">Helvetica</option>
+			</select>
+			<select id="font-size" onchange="fontSizeChange(this)">
+				<option value="12">12</option>
+				<option value="16">16</option>
+				<option value="20">20</option>
+				<option value="24">24</option>
+				<option value="28">28</option>
+				<option value="32">32</option>
+				<option value="36">36</option>
+				<option value="40">40</option>
+			</select>
+			<select id="colorOptions" onchange="colorChange(this)">
+				<option value="blackWhite">Black on White</option>
+				<option value="whiteBlack">White on Black</option>
+			</select>
+			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this)">
+		</div>
+
+		<div id="textToRead">
+			Twenty years from now you will be more disappointed by the things you didn't do than by the ones you did. So throw off the bowlines, Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream.
+		</div>
+
+		<script src="javascripts/readertester.js"></script>
+	</body>
+</html>
