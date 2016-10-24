@@ -54,3 +54,8 @@ function stopTimer() {
 	finishedTime = new Date(Date.now() - timer);
 	document.querySelector("#timerText").innerHTML = finishedTime.getSeconds() + " seconds";
 }
+
+//Change Text
+function textChange() {
+	textToRead.innerHTML = textBlocks[Math.floor(Math.random()*textBlocks.length)];
+}
