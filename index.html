@@ -5,12 +5,14 @@
 
 	<body>
 		<div id="teacherControls">
+			<select id="textSelection" onchange="textSelection(this)">
+
+			</select>
 			<select id="font-family-dropdown" onchange="fontFamilyChange(this)">
 				<option value="Times New Roman">Times New Roman</option>
 				<option value="Arial">Arial</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
 				<option value="Courier New">Courier New</option>
-				<option value=""></option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
 			</select>
 			<select id="font-size" onchange="fontSizeChange(this)">
 				<option value="12">12</option>
@@ -27,6 +29,8 @@
 			<select id="colorOptions" onchange="colorChange(this)">
 				<option value="blackWhite">Black on White</option>
 				<option value="whiteBlack">White on Black</option>
+				<option value="yellowBlack">Yellow on Black</option>
+				<option value="blackYellow">Black on Yellow</option>
 			</select>
 			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this)">
 			<br/>

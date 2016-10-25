@@ -34,6 +34,14 @@ function colorChange(elementTriggered) {
 			textToRead.style.color = "black";
 			textToRead.style.background = "white"
 		break;
+		case "yellowBlack":
+			textToRead.style.color = "yellow";
+			textToRead.style.background = "black"
+		break;
+		case "blackYellow":
+			textToRead.style.color = "black";
+			textToRead.style.background = "yellow"
+		break;				
 		default:
 			textToRead.style.color = "black";
 			textToRead.style.background = "white"
@@ -59,3 +67,19 @@ function stopTimer() {
 function textChange() {
 	textToRead.innerHTML = textBlocks[Math.floor(Math.random()*textBlocks.length)];
 }
+
+function textSelection(elementTriggered) {
+	for(i = 0; i < jsonText.options.length; i++) {
+		if(elementTriggered.value == jsonText.options[i].name) {
+			textToRead.innerHTML = jsonText.options[i].text;	
+		}
+	}
+}
+
+//Fill in text from the json
+(function () {
+	var textSelection = document.querySelector("#textSelection");
+	for(i = 0; i < jsonText.options.length; i++) {
+		textSelection.innerHTML += "<option value=\"" + jsonText.options[i].name + "\">" + jsonText.options[i].name + "</option>";
+	}
+})();

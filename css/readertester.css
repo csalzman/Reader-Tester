@@ -18,9 +18,6 @@ body {
 	height:40px;
 	background: white;
 }
-#teacherControls > input[type="checkbox"] {
-}
-
 #textToRead {
 	background: white;
 	display: inline-block;
@@ -30,7 +27,4 @@ body {
 	padding:25px;
 	height: 100%;
 	font-family: "Times New Roman";
-
-	/*Limited support in firefox*/
-	text-decoration-style: wavy;
 }
