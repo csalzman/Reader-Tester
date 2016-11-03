@@ -6,7 +6,7 @@
 
 	<body>
 		<div id="teacherControls">
-			<select id="textSelection" onchange="textSelection(this)">
+			<select id="textSelection" onchange="textSelection(this.value)">
 
 			</select>
 			<select id="font-family-dropdown" onchange="fontFamilyChange(this.value)">
@@ -35,7 +35,7 @@
 			</select>
 			<br/>
 			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this.checked)">
-			<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this)">
+			<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this.checked)">
 			<br/>
 			<button onclick="startTimer()">Start Timer</button>
 			<button onclick="stopTimer()">Stop Timer</button>

@@ -13,9 +13,9 @@ function fontSizeChange(fontSizeInt) {
 }
 
 //Toggle underline
-function underlineToggle(boolToggle) {
+function underlineToggle(underlineToggle) {
 	//Find the appropriate text and change the fontFamily to the value that's selected
-	if(boolToggle) {
+	if(underlineToggle) {
 		textToRead.style.textDecoration = "underline";	
 	}
 	else {
@@ -63,25 +63,20 @@ function stopTimer() {
 	document.querySelector("#timerText").innerHTML = finishedTime.getSeconds() + " seconds";
 }
 
-//Change Text
-function textChange() {
-	textToRead.innerHTML = textBlocks[Math.floor(Math.random()*textBlocks.length)];
-}
-
-function textSelection(elementTriggered) {
+function textSelection(textSelectionValue) {
 	for(i = 0; i < jsonText.options.length; i++) {
-		if(elementTriggered.value == jsonText.options[i].name) {
+		if(textSelectionValue == jsonText.options[i].name) {
 			textToRead.innerHTML = jsonText.options[i].text;	
 		}
 	}
 }
 
-function verticalToggle(elementTriggered) {
+function verticalToggle(verticalToggle) {
 	//Get the currently selected text
 	var textSelection = document.querySelector("#textSelection");
 
 	//If it's true we'll strip out the commas and make it one per line
-	if(elementTriggered.checked) {
+	if(verticalToggle) {
 		for(i = 0; i < jsonText.options.length; i++) {
 			if(textSelection.value == jsonText.options[i].name) {
 				textToRead.innerHTML = jsonText.options[i].text.replace(/,/g, "<br/>");	
@@ -98,7 +93,7 @@ function verticalToggle(elementTriggered) {
 	}
 }
 
-//Fill in text from the json
+//When we load up go ahead and fill in text from the json in case it's different
 (function () {
 	var textSelection = document.querySelector("#textSelection");
 	for(i = 0; i < jsonText.options.length; i++) {
