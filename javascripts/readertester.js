@@ -69,6 +69,8 @@ function textSelection(textSelectionValue) {
 			textToRead.innerHTML = jsonText.options[i].text;	
 		}
 	}
+
+	verticalToggle(document.querySelector("#verticalText").checked);
 }
 
 function verticalToggle(verticalToggle) {
@@ -93,7 +95,8 @@ function verticalToggle(verticalToggle) {
 	}
 }
 
-//When we load up go ahead and fill in text from the json in case it's different
+//When we load the page fill in the rest of the options for text selection
+//This is based on the json file textBlocks.js
 (function () {
 	var textSelection = document.querySelector("#textSelection");
 	for(i = 0; i < jsonText.options.length; i++) {
