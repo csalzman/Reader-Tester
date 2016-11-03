@@ -1,21 +1,21 @@
 var textToRead = document.querySelector("#textToRead");
 
 //Called from the font-family dropdown onChange
-function fontFamilyChange(elementTriggered) {
+function fontFamilyChange(fontFamilyName) {
 	//Find the appropriate text and change the fontFamily to the value that's selected
-	textToRead.style.fontFamily = elementTriggered.value;
+	textToRead.style.fontFamily = fontFamilyName;
 }
 
 //Called when font-size is changed
-function fontSizeChange(elementTriggered) {
+function fontSizeChange(fontSizeInt) {
 	//Find the appropriate text and change the fontFamily to the value that's selected
-	textToRead.style.fontSize = elementTriggered.value;
+	textToRead.style.fontSize = fontSizeInt;
 }
 
 //Toggle underline
-function underlineToggle(elementTriggered) {
+function underlineToggle(boolToggle) {
 	//Find the appropriate text and change the fontFamily to the value that's selected
-	if(elementTriggered.checked) {
+	if(boolToggle) {
 		textToRead.style.textDecoration = "underline";	
 	}
 	else {
@@ -24,8 +24,8 @@ function underlineToggle(elementTriggered) {
 }
 
 //When the color option dropdown is changed
-function colorChange(elementTriggered) {
-	switch(elementTriggered.value) {
+function colorChange(colorOptionValue) {
+	switch(colorOptionValue) {
 		case "whiteBlack":
 			textToRead.style.color = "white";
 			textToRead.style.background = "black"
