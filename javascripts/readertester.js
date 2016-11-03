@@ -76,6 +76,28 @@ function textSelection(elementTriggered) {
 	}
 }
 
+function verticalToggle(elementTriggered) {
+	//Get the currently selected text
+	var textSelection = document.querySelector("#textSelection");
+
+	//If it's true we'll strip out the commas and make it one per line
+	if(elementTriggered.checked) {
+		for(i = 0; i < jsonText.options.length; i++) {
+			if(textSelection.value == jsonText.options[i].name) {
+				textToRead.innerHTML = jsonText.options[i].text.replace(/,/g, "<br/>");	
+			}
+		}
+	}
+	//If false we'll add the commas and remove the breaks
+	else {
+		for(i = 0; i < jsonText.options.length; i++) {
+			if(textSelection.value == jsonText.options[i].name) {
+				textToRead.innerHTML = jsonText.options[i].text.replace(/\<br\/\>/g, ",");	
+			}
+		}
+	}
+}
+
 //Fill in text from the json
 (function () {
 	var textSelection = document.querySelector("#textSelection");

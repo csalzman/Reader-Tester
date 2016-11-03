@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/readertester.css">
 	</head>
 
@@ -32,9 +33,9 @@
 				<option value="yellowBlack">Yellow on Black</option>
 				<option value="blackYellow">Black on Yellow</option>
 			</select>
-			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this)">
 			<br/>
-			<button id="textChange" onclick="textChange()">Change Text</button>
+			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this)">
+			<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this)">
 			<br/>
 			<button onclick="startTimer()">Start Timer</button>
 			<button onclick="stopTimer()">Stop Timer</button>
