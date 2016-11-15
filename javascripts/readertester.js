@@ -50,17 +50,23 @@ function colorChange(colorOptionValue) {
 }
 
 //Ugly timer functions
-//TODO: clean this up to use one button
 var timer;
 var finishedTime;
 
-function startTimer() {
-	timer = Date.now();
-}
+//Used to toggle state
+var timerRunning = false;
 
-function stopTimer() {
-	finishedTime = new Date(Date.now() - timer);
-	document.querySelector("#timerText").innerHTML = finishedTime.getSeconds() + " seconds";
+function toggleTimer() {
+	if(!timerRunning) {
+		timer = Date.now();
+		document.querySelector("#timerText").innerHTML = "Counting";
+		timerRunning = true;
+	}
+	else {
+		finishedTime = new Date(Date.now() - timer);
+		document.querySelector("#timerText").innerHTML = finishedTime.getSeconds() + " seconds";
+		timerRunning = false;
+	}
 }
 
 function textSelection(textSelectionValue) {
