@@ -21,11 +21,15 @@ body {
 	background: white;
 }
 
-#teacherControls > select {
+.controlRow > select {
 	font-size:20px;
 	height:40px;
 	background: white;
 	/*margin:10px;*/
+}
+
+.controlRow {
+	padding:5px;
 }
 
 #textToRead {
