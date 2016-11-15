@@ -1,52 +1,54 @@
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/readertester.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 
 	<body>
-		<div id="teacherControls">
-			<select id="textSelection" onchange="textSelection(this.value)">
+		<div id="maincontent">
+			<div id="teacherControls">
+				<select id="textSelection" onchange="textSelection(this.value)">
 
-			</select>
-			<select id="font-family-dropdown" onchange="fontFamilyChange(this.value)">
-				<option value="Times New Roman">Times New Roman</option>
-				<option value="Arial">Arial</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-			</select>
-			<select id="font-size" onchange="fontSizeChange(this.value)">
-				<option value="12">12</option>
-				<option value="16">16</option>
-				<option value="20" selected>20</option>
-				<option value="24">24</option>
-				<option value="28">28</option>
-				<option value="32">32</option>
-				<option value="36">36</option>
-				<option value="44">44</option>
-				<option value="48">48</option>
-				<option value="52">52</option>
-			</select>
-			<select id="colorOptions" onchange="colorChange(this.value)">
-				<option value="blackWhite">Black on White</option>
-				<option value="whiteBlack">White on Black</option>
-				<option value="yellowBlack">Yellow on Black</option>
-				<option value="blackYellow">Black on Yellow</option>
-			</select>
-			<br/>
-			<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this.checked)">
-			<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this.checked)">
-			<br/>
-			<button onclick="startTimer()">Start Timer</button>
-			<button onclick="stopTimer()">Stop Timer</button>
-			<span id="timerText"></span>
+				</select>
+				<select id="font-family-dropdown" onchange="fontFamilyChange(this.value)">
+					<option value="Times New Roman">Times New Roman</option>
+					<option value="Arial">Arial</option>
+					<option value="Courier New">Courier New</option>
+					<option value="Comic Sans MS">Comic Sans MS</option>
+				</select>
+				<select id="font-size" onchange="fontSizeChange(this.value)">
+					<option value="12">12</option>
+					<option value="16">16</option>
+					<option value="20" selected>20</option>
+					<option value="24">24</option>
+					<option value="28">28</option>
+					<option value="32">32</option>
+					<option value="36">36</option>
+					<option value="44">44</option>
+					<option value="48">48</option>
+					<option value="52">52</option>
+				</select>
+				<select id="colorOptions" onchange="colorChange(this.value)">
+					<option value="blackWhite">Black on White</option>
+					<option value="whiteBlack">White on Black</option>
+					<option value="yellowBlack">Yellow on Black</option>
+					<option value="blackYellow">Black on Yellow</option>
+				</select>
+				<br/>
+				<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this.checked)">
+				<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this.checked)">
+				<br/>
+				<button onclick="startTimer()">Start Timer</button>
+				<button onclick="stopTimer()">Stop Timer</button>
+				<span id="timerText"></span>
+			</div>
+
+			<div id="textToRead">
+				a, and, away, big, blue, can, come, down, find, for, funny, go, help, here, I, in, is, it, jump, little, look, make, me, my, not, one, play, red, run, said, see, the, three, to, two, up, we, where, yellow, you
+			</div>
+
+			<script src="javascripts/textBlocks.js"></script>
+			<script src="javascripts/readertester.js"></script>
 		</div>
-
-		<div id="textToRead">
-			a, and, away, big, blue, can, come, down, find, for, funny, go, help, here, I, in, is, it, jump, little, look, make, me, my, not, one, play, red, run, said, see, the, three, to, two, up, we, where, yellow, you
-		</div>
-
-		<script src="javascripts/textBlocks.js"></script>
-		<script src="javascripts/readertester.js"></script>
 	</body>
 </html>
