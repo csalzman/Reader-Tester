@@ -53,6 +53,7 @@ input.toggleButton {
 input.toggleButton:checked + label.toggleButtonLabel {
   background-color: #2196F3;
   color:white;
+  border:3px solid black;
 }
 
 #textToRead {
