@@ -28,23 +28,23 @@ function colorChange(colorOptionValue) {
 	switch(colorOptionValue) {
 		case "whiteBlack":
 			textToRead.style.color = "white";
-			textToRead.style.background = "black"
+			textToRead.style.background = "black";
 		break;
 		case "blackWhite":
 			textToRead.style.color = "black";
-			textToRead.style.background = "white"
+			textToRead.style.background = "white";
 		break;
 		case "yellowBlack":
 			textToRead.style.color = "yellow";
-			textToRead.style.background = "black"
+			textToRead.style.background = "black";
 		break;
 		case "blackYellow":
 			textToRead.style.color = "black";
-			textToRead.style.background = "yellow"
+			textToRead.style.background = "yellow";
 		break;				
 		default:
 			textToRead.style.color = "black";
-			textToRead.style.background = "white"
+			textToRead.style.background = "white";
 		break;
 	}
 }
@@ -98,6 +98,15 @@ function verticalToggle(verticalToggle) {
 				textToRead.innerHTML = jsonText.options[i].text.replace(/\<br\/\>/g, ",");	
 			}
 		}
+	}
+}
+
+function testTesting(boolean) {
+	if(boolean) {
+		return "woo";
+	}
+	else {
+		return "no";
 	}
 }
 

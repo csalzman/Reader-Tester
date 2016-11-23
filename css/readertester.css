@@ -2,14 +2,22 @@ body {
 	margin:0;
 	font-size:16px;
 	-webkit-text-size-adjust: 100%;
-	
 	font-family:sans-serif;
-	background: gray;
+	background: #778899;
+}
+
+h1 {
+	text-align: center;
+	font-size:2em;
+	color:white;
+	padding-top:10px;
 }
 
 #maincontent {
 	margin:0 auto;
 	max-width:700px;
+	border-left:5px black solid;
+	border-right:5px black solid;
 }
 
 #teacherControls {
@@ -25,11 +33,26 @@ body {
 	font-size:20px;
 	height:40px;
 	background: white;
-	/*margin:10px;*/
 }
 
 .controlRow {
 	padding:5px;
+}
+
+input.toggleButton {
+	display:none;
+}
+
+.toggleButtonLabel {
+	border:1px black solid;
+	padding:5px;
+	margin:5px;
+	transition: .2s;
+}
+
+input.toggleButton:checked + label.toggleButtonLabel {
+  background-color: #2196F3;
+  color:white;
 }
 
 #textToRead {

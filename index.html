@@ -1,15 +1,17 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/readertester.css">
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+		<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 
 	<body>
 		<div id="maincontent">
+			<h1>Title of Tool</h1>
 			<div id="teacherControls">
 				<div class="controlRow">
 					<select id="textSelection" onchange="textSelection(this.value)">
-
 					</select>
 					<select id="font-family-dropdown" onchange="fontFamilyChange(this.value)">
 						<option value="Times New Roman">Times New Roman</option>
@@ -36,22 +38,47 @@
 						<option value="blackYellow">Black on Yellow</option>
 					</select>
 				</div>
+
 				<div class="controlRow">
-					<label for="underlineToggle">Underline?</label><input type="checkbox" id="underlineToggle" checked onchange="underlineToggle(this.checked)">
-					<label for="verticalText">Vertical Text?</label><input type="checkbox" id="verticalText" onchange="verticalToggle(this.checked)">
+					
+					<input type="checkbox" class="toggleButton" id="underlineToggle" checked onchange="underlineToggle(this.checked)"><label for="underlineToggle" class="toggleButtonLabel">Underline Text</label>
+
+					<input type="checkbox" class="toggleButton" id="verticalText" onchange="verticalToggle(this.checked)"><label for="verticalText" class="toggleButtonLabel">Vertical Text</label>
 				</div>
+
 				<div class="controlRow">
-					<button onclick="toggleTimer()">Start/Stop Timer</button>
+					<button onclick="toggleTimer()">Start/Stop Timer</button><br/>
 					<span id="timerText">Waiting</span>
 				</div>
 			</div>
 
-			<div id="textToRead">
-				a, and, away, big, blue, can, come, down, find, for, funny, go, help, here, I, in, is, it, jump, little, look, make, me, my, not, one, play, red, run, said, see, the, three, to, two, up, we, where, yellow, you
-			</div>
+			<div id="textToRead" style="text-decoration: underline;">a, and, away, big, blue, can, come, down, find, for, funny, go, help, here, I, in, is, it, jump, little, look, make, me, my, not, one, play, red, run, said, see, the, three, to, two, up, we, where, yellow, you</div>
 
 			<script src="javascripts/textBlocks.js"></script>
 			<script src="javascripts/readertester.js"></script>
+
+			<div id="qunit"></div>
+
+			<script>
+				QUnit.test("Test Testing", function( assert ) {
+					assert.equal(testTesting(false), "no");
+					assert.equal(testTesting(true), "woo");
+				});
+
+				QUnit.test("Initial Text Setup", function( assert ) {
+					var startingText = document.getElementById("textToRead");
+					assert.equal(startingText.innerHTML, "a, and, away, big, blue, can, come, down, find, for, funny, go, help, here, I, in, is, it, jump, little, look, make, me, my, not, one, play, red, run, said, see, the, three, to, two, up, we, where, yellow, you");
+				});
+
+				QUnit.test("Underlining", function( assert) {
+					var startingText = document.getElementById("textToRead");
+					underlineToggle(false);
+					assert.equal(startingText.style.textDecoration, "none");
+					underlineToggle(true);
+					assert.equal(startingText.style.textDecoration, "underline");
+				});
+
+			</script>
 		</div>
 	</body>
 </html>
