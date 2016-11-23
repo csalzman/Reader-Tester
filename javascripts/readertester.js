@@ -14,14 +14,23 @@ function fontSizeChange(fontSizeInt) {
 
 //Toggle underline
 function underlineToggle(underlineToggle) {
+	//UnderlineInput
+	var underlineInput = document.getElementById("underlineToggle");
 	//Find the appropriate text and change the fontFamily to the value that's selected
 	if(underlineToggle) {
-		textToRead.style.textDecoration = "underline";	
+		textToRead.style.textDecoration = "underline";
+		underlineInput.checked = true;
 	}
 	else {
 		textToRead.style.textDecoration = "none";
+		underlineInput.checked = false;
 	}
 }
+
+//Watch for underLine Toggle getting clicked
+document.getElementById('underlineToggle').onclick = function() { 
+	underlineToggle(this.checked)
+};
 
 //When the color option dropdown is changed
 function colorChange(colorOptionValue) {
